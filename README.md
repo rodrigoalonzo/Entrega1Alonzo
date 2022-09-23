@@ -44,4 +44,4 @@ http://127.0.0.1:8000/AppBlog/searchprof/ ---> Resultado de búsqueda de profesi
 
 E-mail: rodrigo.alonzo@hotmail.com
 
-<<<<<<** VERSIÓN ACTUAL 3.1.6 **>>>>>>
+<<<<<<** VERSIÓN ACTUAL 3.1.7 **>>>>>>
