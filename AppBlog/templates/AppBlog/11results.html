@@ -1,0 +1,23 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+RESULTADOS
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+{% for profesional in profesionales %}
+
+        <ul>
+            <li>Nombre: {{profesional.professionalname}}</li>
+            <li>Apellido: {{profesional.professionalsurname}}</li>
+            <li>Email: {{profesional.professionalemail}}</li>
+        </ul>
+
+    {% endfor %}
+
+{% endblock %}

@@ -112,3 +112,22 @@ def FormTaxesExpiration(request):
         formularioImpuestos=TaxexpirationdatesForm()
 
     return render(request, "AppBlog/9FormTaxes.html", {"formularioImpuestos":formularioImpuestos})
+
+def SearchProfessional(request):
+
+    return render(request, "AppBlog/10FormProfSearch.html")
+
+def ProfSearch(request):
+
+    if request.GET["professionalname"]:
+        
+        search = request.GET["professionalname"]
+        profesional = Professionals.objects.filter(professionalname__icontains=search)
+
+        return render(request, "AppBlog/11results.html", {"profesional":profesional, "search":search})
+
+    else:
+
+        mensaje = "No enviaste datos"
+
+    return HttpResponse(mensaje)

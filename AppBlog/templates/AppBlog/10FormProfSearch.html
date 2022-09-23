@@ -1,0 +1,21 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+BUSCAR PROFESIONAL
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+<form action="/AppBlog/searchprof/" method="GET"> {% csrf_token %}
+
+    <input type="text" name="professionalname">
+
+    <input type="submit" value="BUSCAR">
+
+</form>
+
+{% endblock %}

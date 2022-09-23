@@ -10,5 +10,7 @@ urlpatterns = [
     path('formprof/', views.FormProfessionals, name="FormProfessionals"),
     path('formserv/', views.FormServices, name="FormServices"),
     path('forminfo/', views.FormUpdateInfo, name="FormUpdatedInfo"),
-    path('formtaxes', views.FormTaxesExpiration, name="FormTaxesExpiration")
+    path('formtaxes', views.FormTaxesExpiration, name="FormTaxesExpiration"),
+    path('searchprofessional/', views.SearchProfessional, name="Buscar"),
+    path('searchprof/', views.ProfSearch),
 ]
