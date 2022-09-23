@@ -122,9 +122,9 @@ def ProfSearch(request):
     if request.GET["professionalname"]:
         
         search = request.GET["professionalname"]
-        profesional = Professionals.objects.filter(professionalname__icontains=search)
+        profesionales = Professionals.objects.filter(professionalname__icontains=search)
 
-        return render(request, "AppBlog/11results.html", {"profesional":profesional, "search":search})
+        return render(request, "AppBlog/11results.html", {"profesionales":profesionales, "search":search})
 
     else:
 

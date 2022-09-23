@@ -4,20 +4,27 @@
 
 {% block titulo %}
 
-RESULTADOS
+RESULTADOS DE LA BÚSQUEDA
 
 {% endblock %}
 
 {% block descripcion0 %}
 
-{% for profesional in profesionales %}
-
-        <ul>
-            <li>Nombre: {{profesional.professionalname}}</li>
-            <li>Apellido: {{profesional.professionalsurname}}</li>
-            <li>Email: {{profesional.professionalemail}}</li>
-        </ul>
-
-    {% endfor %}
+Estás buscando: {{search}}
 
 {% endblock %}
+
+{% block descripcion1 %}
+
+    {% for prof in profesionales %}
+
+        <ul>
+            <li>NOMBRE: {{prof.professionalname}}</li>
+            <li>APELLIDO: {{prof.professionalsurname}}</li>
+            <li>EMAIL: {{prof.professionalemail}}</li>
+            <li>CELULAR: {{prof.professionalcellphone}}</li>
+        </ul>
+    
+    {% endfor %}
+
+    {% endblock %}
