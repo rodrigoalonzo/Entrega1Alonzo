@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
 from AppBlog.forms import ProfessionalsForm, ServicesForm, TaxexpirationdatesForm, UpdatedinformationForm
 from AppBlog.models import Professionals, Services, Taxexpirationdates, Updatedinformation
 
@@ -36,7 +35,7 @@ def FormProfessionals(request):
 
             info = formularioProfesionales.cleaned_data
         
-            ProfForm = Professionals(professionalname=info["name"], professionalsurname=info["surname"], professionalprofesion=info["profesion"], professionalemail=info["Email"], professionalcellnumber=info["Número de celular"])
+            ProfForm = Professionals(professionalname=request.POST["Nombre"], professionalsurname=request.POST["Apellido"], professionalprofesion=request.POST["Profesión"], professionalemail=request.POST["Email"], professionalcellnumber=request.POST["Celular"])
         
             ProfForm.save()
 
@@ -58,7 +57,7 @@ def FormServices(request):
 
             info = formularioServicios.cleaned_data
         
-            ServForm = Services(servicename=info["name"])
+            ServForm = Services(servicename=info["Servicio"])
         
             ServForm.save()
 
@@ -80,7 +79,7 @@ def FormUpdateInfo(request):
 
             info = formularioInformacion.cleaned_data
         
-            InfoForm = Updatedinformation(professionalname=info["name"], informationdate=info["date"], informationtext=info["text"])
+            InfoForm = Updatedinformation(professionalname=info["Profesional"], informationdate=info["Fecha"], informationtext=info["Texto"])
         
             InfoForm.save()
 
@@ -102,7 +101,7 @@ def FormTaxesExpiration(request):
 
             info = formularioImpuestos.cleaned_data
         
-            ImpForm = Taxexpirationdates(taxname=info["taxname"], taxdate=info["taxdate"], taxresponsible=info["taxresponsible"])
+            ImpForm = Taxexpirationdates(taxname=info["Impuesto"], taxdate=info["Vencimiento"], taxresponsible=info["Responsable"])
         
             ImpForm.save()
 
