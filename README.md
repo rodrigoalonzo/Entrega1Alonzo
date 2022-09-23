@@ -7,7 +7,7 @@
 
 - Se crearon 4 modelos de datos:
 
---- "Professionals" contiene información del personal de la empresa: NOMBRES, APELLIDOS, PROFESION, EMAIL, NÚMERO DE CELULAR
+--- "Professionals" contiene información del personal del estudio
 
 --- "Services" contiene las categorías de servicios prestados
 
