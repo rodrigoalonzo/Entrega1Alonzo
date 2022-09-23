@@ -1,3 +1,9 @@
 from django.contrib import admin
+from AppBlog.models import *
 
-# Register your models here.
+#Modelos registrados
+
+admin.site.register(Professionals)
+admin.site.register(Services)
+admin.site.register(Updatedinformation)
+admin.site.register(Taxexpirationdates)
