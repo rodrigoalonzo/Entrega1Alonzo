@@ -2,13 +2,13 @@ from django.db import models
 
 #Modelos creados
 
-class Blogger(models.Model):
+class Professionals(models.Model):
 
-    bloggername = models.CharField(max_length=100)
-    bloggersurname = models.CharField(max_length=100)
-    bloggerprofesion = models.CharField(max_length=100)
-    bloggeremail = models.EmailField()
-    bloggercellnumber = models.IntegerField()
+    professionalname = models.CharField(max_length=100)
+    professionalsurname = models.CharField(max_length=100)
+    professionalprofesion = models.CharField(max_length=100)
+    professionalemail = models.EmailField()
+    professionalcellnumber = models.IntegerField()
 
 class Services(models.Model):
 
@@ -16,7 +16,7 @@ class Services(models.Model):
 
 class Updatedinformation(models.Model):
 
-    bloggername = models.CharField(max_length=100)
+    professionalname = models.CharField(max_length=100)
     informationdate = models.DateField()
     informationtext = models.CharField(max_length=500)
 
