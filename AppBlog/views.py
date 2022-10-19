@@ -18,21 +18,11 @@ def inicio(request):
 
     return render(request, "AppBlog/1inicio.html")
 
-def acerca1(request):
+def acerca(request):
 
     aboutmeimage = AboutMeImage.objects.all()
 
     return render(request, "AppBlog/100acercademi.html", {"aboutmeimage":aboutmeimage})
-
-def acerca2(request):
-
-    today = date.today()
-
-    birthday = date(year=1989, month=7, day=15)
-
-    myage = int(((today-birthday).days)/365)
-
-    return render(request, "AppBlog/100acercademi.html", {"age":myage})
 
 def professionals(request):
 

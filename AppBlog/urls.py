@@ -5,8 +5,7 @@ from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('inicio/', views.inicio, name="Inicio"),
-    path('acercademi/', views.acerca1, name="Acerca"),
-    path('acercademi/', views.acerca2, name="Acerca"),
+    path('acercademi/', views.acerca, name="Acerca"),
     path('nosotros/', views.professionals, name="Nosotros"),
     path('servicios/', views.services, name="Servicios"),
     path('infoactual/', views.updatedinformation, name="Información"),
