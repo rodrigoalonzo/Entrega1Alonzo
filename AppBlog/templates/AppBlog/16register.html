@@ -1,0 +1,30 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+FORMULARIO DE REGISTRO
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+    <form action="" method="POST"> {% csrf_token %}
+        <div align="left" style="font-size:medium">
+            <table>
+                {{registerform.as_table}}
+            </table>
+        </div>
+        <br/>
+        <button class="btn btn-primary" type="submit" style="font-size:x-large">REGISTRARSE</button>
+    </form>
+
+    <br/>
+    <a class="btn btn-primary" href="{% url 'Inicio' %}" style="font-size:x-large">CANCELAR</a>
+    
+{% endblock %}

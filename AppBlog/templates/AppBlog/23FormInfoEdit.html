@@ -1,0 +1,44 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+EDITAR INFORMACION
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+    <div align="center">
+        <ul>
+            <em>Modificar los siguientes datos:</em>
+        </ul>
+    </div>
+    <br/>
+
+    <form action="" method="POST"> {% csrf_token %}
+
+        <table align="center">
+
+            {{formularioInformacion.as_table}}
+
+        </table>
+
+        <br/>
+
+        <button class="btn btn-primary" type="submit" style="font-size:x-large">GUARDAR</button>
+
+    </form>
+
+
+    <br/>
+    <div align="center">
+        <a class="btn btn-primary" href="{% url 'Información' %}"><em style="font-size:x-large">VOLVER A INFORMACION</em></a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+NUESTROS PROFESIONALES
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+Están para brindarte una solución, siempre
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+<div align="left">
+    <ul>
+        <em>Detalles del profesional seleccionado:</em>
+    </ul>
+</div>
+<br/>
+
+<div align="left">
+    <li type="square">Nombre: {{professionals.professionalname}} {{professionals.professionalsurname}}</li>
+    <li type="square">Profesión: {{professionals.professionalprofesion}}</li>
+    <li type="square">Email: {{professionals.professionalemail}}</li>
+    <li type="square">Celular: {{professionals.professionalcellnumber}}</li>
+</div>
+<br/>
+
+<div align="left">
+        <a class="btn btn-primary" href="{% url 'Nosotros' %}"><em>Volver al listado de profesionales</em></a>
+</div>
+
+{% endblock %}

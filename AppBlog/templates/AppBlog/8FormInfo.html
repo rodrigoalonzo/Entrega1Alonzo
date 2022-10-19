@@ -1,27 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "AppBlog/templatesupl.html" %}
 
-    <form action="" method="POST"> {% csrf_token %}
+{% load static %}
 
-        <table>
+{% block titulo %}
 
-            {{formularioInformacion.as_table}}
+PUBLICAR INFORMACIÓN
 
-        </table>
+{% endblock %}
 
-        <input type="submit" value="ENVIAR">
+{% block descripcion0 %}
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+<div align="center">
+    <ul>
+        <em>Insertar los siguientes datos:</em>
+    </ul>
+</div>
+<br/>
+
+<form action="" method="POST"> {% csrf_token %}
+
+    <table align="center">
+
+        {{formularioInformacion.as_table}}
+
+    </table>
+
+    <br/>
+
+    <button class="btn btn-primary" type="submit" style="font-size:x-large">PUBLICAR</button>
+
+</form>
 
 
-    </form>
+<br/>
+<div align="center">
+    <a class="btn btn-primary" href="{% url 'Información' %}"><em style="font-size:x-large">VOLVER A INFORMACION</em></a>
+</div>
 
-
-
-</body>
-</html>
+{% endblock %}

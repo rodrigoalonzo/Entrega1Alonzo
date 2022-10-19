@@ -16,16 +16,29 @@ Estás buscando: {{search}}
 
 {% block descripcion1 %}
 
+<div align="left">
+    <ul>
+        <em>Los siguientes profesionales coinciden con la búsqueda:</em>
+    </ul>
+</div>
+<br/>
+
     {% for prof in profesionales %}
 
-        <ul>
-            <li>NOMBRE: {{prof.professionalname}}</li>
-            <li>APELLIDO: {{prof.professionalsurname}}</li>
-            <li>PROFESION: {{prof.professionalprofesion}}</li>
-            <li>EMAIL: {{prof.professionalemail}}</li>
-            <li>CELULAR: {{prof.professionalcellnumber}}</li>
-        </ul>
+        <div align="left">
+            <ul>
+                <li>Nombre completo: {{prof.professionalname}} {{prof.professionalsurname}}</li>
+                <li>Profesión: {{prof.professionalprofesion}}</li>
+                <li>Email: {{prof.professionalemail}}</li>
+                <li>Celular: {{prof.professionalcellnumber}}</li>
+                <br/>
+            </ul>
+        </div>
     
     {% endfor %}
+
+    <div align="left" style="font-size:medium">
+            <a class="btn btn-primary" href="{% url 'BuscarProfesional' %}"><em>Click aquí para buscar nuevamente</em></a>
+    </div>
 
     {% endblock %}

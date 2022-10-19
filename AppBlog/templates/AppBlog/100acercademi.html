@@ -1,0 +1,42 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+ACERCA DE MÍ
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+<em>Te presentamos al fundador de ACC Services</em>
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+{% for aboutme in aboutmeimage %}
+
+    <img src="{{aboutme.imageabout.url}}" alt="No hay imagen" height="300px">
+
+{% endfor %}
+
+<br/>
+<br/>
+
+    <P style="font-size:large"><em>Mi nombre es Rodrigo Javier Alonzo. Nací y crecí en la ciudad de Río
+    Ceballos. Actualmente resido en dicha ciudad. En el año 2022 decidí fundar este estudio que congrega
+    profesionales de diferentes ramas con el objetivo de ofrecer una solución integral y acompañar a las empresas y
+    nuevos emprendedores en esta nueva era más dinámica de los negocios. Creo que la programación y las nuevas
+    tecnologías no vienen a reemplazar las profesiones tradicionales sino, más bien, a dar un gran aporte y
+    mejorar en muchos aspectos las formas de trabajar, de manera de generar y tener información actualizada
+    al instante. Esto es clave para los negocios hoy en día. Es por ello que decidí comenzar a formarme en
+    materias relacionadas a la tecnología de información y comenzar, desde mi humilde lugar, con el cambio.</em></P>
+
+<br/>
+    <div align="center">
+        <a class="btn btn-primary" href="{% url 'Inicio' %}"><em style="font-size:medium">VOLVER A INICIO</em></a>
+    </div>
+
+{% endblock %}

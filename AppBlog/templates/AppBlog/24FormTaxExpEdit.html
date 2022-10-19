@@ -4,7 +4,7 @@
 
 {% block titulo %}
 
-AGREGAR VENCIMIENTO DE IMPUESTO
+EDITAR VENCIMIENTOS
 
 {% endblock %}
 
@@ -16,7 +16,7 @@ AGREGAR VENCIMIENTO DE IMPUESTO
 
 <div align="center">
     <ul>
-        <em>Insertar los siguientes datos:</em>
+        <em>Modificar los siguientes datos:</em>
     </ul>
 </div>
 <br/>
@@ -25,13 +25,13 @@ AGREGAR VENCIMIENTO DE IMPUESTO
 
     <table align="center">
 
-        {{formularioImpuestos.as_table}}
+        {{formularioVencimientos.as_table}}
 
     </table>
 
     <br/>
 
-    <button class="btn btn-primary" type="submit" style="font-size:x-large">AGREGAR</button>
+    <button class="btn btn-primary" type="submit" style="font-size:x-large">GUARDAR</button>
 
 </form>
 

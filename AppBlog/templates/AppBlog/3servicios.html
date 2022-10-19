@@ -13,3 +13,46 @@ SERVICIOS
 Brindamos una solución integral
 
 {% endblock %}
+
+{% block descripcion1 %}
+
+<div align="left">
+    <ul>
+        <em>Nos especializamos en los siguientes servicios:</em>
+    </ul>
+</div>
+<br/>
+
+    {% for services in servicesall %}
+
+        <ul>
+            <div align="left">
+                <li type="square" style="text-transform:uppercase">{{services.servicename}}
+
+                {% if request.user.is_superuser %}
+
+                <a class="btn btn-primary" href="{% url 'EditService' services.servicename %}" style="background-color:blue;border-color:blue"><em style="color:white;font-weight:bold;font-size:small">EDITAR</em></a>
+                <a class="btn btn-primary" href="{% url 'ServiceConfirmation' services.id %}" style="background-color:red;border-color:red"><em style="color:white;font-weight:bold;font-size:small">BORRAR</em></a>
+
+                {% else %}
+
+                {% endif %}
+
+                </li>
+            </div>
+        </ul>
+
+    {% endfor %}
+
+    {% if request.user.is_superuser %}
+
+    <br/>
+    <div align="left">
+        <a class="btn btn-primary" href="{% url 'FormServices' %}"><em style="font-size:medium">Click aquí para agregar servicio</em></a>
+    </div>
+
+    {% else %}
+
+    {% endif %}
+
+{% endblock %}

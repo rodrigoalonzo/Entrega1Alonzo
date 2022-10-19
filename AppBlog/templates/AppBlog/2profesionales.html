@@ -13,3 +13,51 @@ NUESTROS PROFESIONALES
 Están para brindarte una solución, siempre
 
 {% endblock %}
+
+{% block descripcion1 %}
+
+<div align="left">
+    <ul>
+        <em>Este es el listado de profesionales:</em>
+    </ul>
+</div>
+<br/>
+
+    {% for professional in professionalsall %}
+
+        <ul>
+            <div align="left">
+                <li type="square" style="font-size:medium">
+                    {{professional.professionalname}}
+                    {{professional.professionalsurname}}
+                    <em>({{professional.professionalprofesion}})</em>
+                    <em>- Contacto: {{professional.professionalemail}}</em>
+                    <a class="btn btn-primary" href="{% url 'DetailsProfessionals' professional.id %}" style="background-color:lightgreen;border-color:lightgreen"><em style="color:black;font-weight:bold;font-size:small">DETALLES</em></a>
+
+                    {% if request.user.is_superuser %}
+
+                    <a class="btn btn-primary" href="{% url 'EditProfessional' professional.professionalname %}" style="background-color:blue;border-color:blue"><em style="color:white;font-weight:bold;font-size:small">EDITAR</em></a>
+                    <a class="btn btn-primary" href="{% url 'ProfessionalConfirmation' professional.id %}" style="background-color:red;border-color:red"><em style="color:white;font-weight:bold;font-size:small">BORRAR</em></a>
+
+                    {% else %}
+
+                    {% endif %}
+
+                </li>
+            </div>
+        </ul>
+
+    {% endfor %}
+
+    {% if request.user.is_superuser %}
+
+    <br/>
+        <div align="left">
+            <a class="btn btn-primary" href="{% url 'FormProfessionals' %}"><em style="font-size:medium">Click aquí para agregar profesional</em></a>
+        </div>
+    
+    {% else %}
+
+    {% endif %}
+
+{% endblock %}

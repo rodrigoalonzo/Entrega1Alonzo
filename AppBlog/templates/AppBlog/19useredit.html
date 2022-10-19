@@ -1,0 +1,34 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+EDITAR USUARIO
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+<h2 style="color:white"><em>Usuario conectado: {{userlogged}}</em></h2>
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+    <form action="" method="POST"> {% csrf_token %}
+        <div align="left" style="font-size:medium">
+            <table>
+                {{usereditform.as_table}}
+            </table>
+        </div>
+        <br/>
+        <button class="btn btn-primary" type="submit" style="font-size:x-large">GUARDAR</button>
+    </form>
+
+    <br/>
+    <div align="center">
+        <a class="btn btn-primary" href="{% url 'Inicio' %}"><em style="font-size:x-large">VOLVER A INICIO</em></a>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+INICIAR SESION
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+    <form action="" method="POST"> {% csrf_token %}
+        <div align="center">
+            <table>
+                {{loginform.as_table}}
+            </table>
+        </div>
+        <br/>
+
+        <button class="btn btn-primary" type="submit" style="font-size:x-large">INICIAR SESIÓN</button>
+
+    </form>
+
+    <br/>
+    <a class="btn btn-primary" href="{% url 'Inicio' %}" style="font-size:x-large">CANCELAR</a>
+    
+{% endblock %}

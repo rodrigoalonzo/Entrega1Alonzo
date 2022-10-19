@@ -20,15 +20,35 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="{% url 'Inicio' %}">INICIO</a>
+                <a class="btn btn-primary" href="{% url 'Inicio' %}" style="background-color:lightgreen;border-style:solid;border-color:black;color:black;font-weight:bold;font-size:small">INICIO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Nosotros' %}">NOSOTROS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Servicios' %}">SERVICIOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Información' %}">INFORMACION</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Vencimientos' %}">VENCIMIENTOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'BuscarProfesional' %}">BUSCAR PROFESIONAL</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Acerca' %}" style="background-color:rgb(12, 12, 151);border-style:solid;border-color:black;color:white;font-weight:bold;font-size:small">ACERCA DE MI</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Nosotros' %}" style="background-color:rgb(79, 81, 81);border-style:solid;border-color:black;color:white;font-weight:bold;font-size:small">STAFF</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Servicios' %}" style="background-color:rgb(79, 81, 81);border-style:solid;border-color:black;color:white;font-weight:bold;font-size:small">SERVICIOS</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Información' %}" style="background-color:rgb(79, 81, 81);border-style:solid;border-color:black;color:white;font-weight:bold;font-size:small">INFORMACION</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Vencimientos' %}" style="background-color:rgb(79, 81, 81);border-style:solid;border-color:black;color:white;font-weight:bold;font-size:small">VENCIMIENTOS</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'BuscarProfesional' %}" style="background-color:rgb(79, 81, 81);border-style:solid;border-color:black;color:white;font-weight:bold;font-size:small">BUSCAR PROFESIONAL</a></li>
+
+                        {% if request.user.is_authenticated %}
+
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'EditarUsuario' %}" style="background-color:khaki;border-style:solid;border-color:black;color:black;font-weight:bold;font-size:small">EDITAR USUARIO</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Logout' %}" style="background-color:salmon;border-style:solid;border-color:black;color:black;font-weight:bold;font-size:small">CERRAR SESIÓN</a></li>
+                        <p style="color:white"><em>{{user}}</em></p>
+
+                        {% with user.useravatar_set.last as last_image %}
+
+                            <img src="{{last_image.image.url}}" height="35px">
+
+                        {% endwith %}
+
+                        {% else %}
+
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Registro' %}" style="background-color:greenyellow;border-style:solid;border-color:black;color:black;font-weight:bold;font-size:small;">REGISTRARSE</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'Login' %}" style="background-color:lightskyblue;border-style:solid;border-color:black;color:black;font-weight:bold;font-size:small">INICIAR SESION</a></li>
+
+                        {% endif %}
                     </ul>
                 </div>
             </div>

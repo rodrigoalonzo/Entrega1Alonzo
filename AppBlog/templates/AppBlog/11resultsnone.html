@@ -1,0 +1,26 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+RESULTADOS DE LA BÚSQUEDA
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+<h1 style="text-transform:uppercase"><em>{{mensaje}}</em></h1>
+
+<br/>
+<div align="center" style="font-size:medium">
+
+    <a class="btn btn-primary" href="{% url 'BuscarProfesional' %}"><em>Click aquí para repetir búsqueda</em></a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "AppBlog/templatesupl.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+NOVEDADES
+
+{% endblock %}
+
+{% block descripcion0 %}
+
+Te mantenemos informado de las últimas novedades
+
+{% endblock %}
+
+{% block descripcion1 %}
+
+<div align="left">
+    <li type="none" style="background-color:cyan;border-style:solid;border-color:black;">Fecha de publicación: {{updatedinformation.informationdate}} - Tema: {{updatedinformation.informationservice}}</li>
+    <li type="none" style="background-color:lightgoldenrodyellow;border-style:solid;border-color:black;">{{updatedinformation.informationtitle}}</li>
+    <br/>
+    <li type="none" style="background-color:rgb(245, 240, 237);border-style:solid;border-color:black;"><em>{{updatedinformation.informationtext}}</em></li>
+    <br/>
+    <li type="none"><em style="font-size:large">Autor: {{updatedinformation.professionalname}}</em></li>
+</div>
+<br/>
+
+<div align="left">
+        <a class="btn btn-primary" href="{% url 'Información' %}"><em>Volver al listado de novedades</em></a>
+</div>
+
+{% endblock %}

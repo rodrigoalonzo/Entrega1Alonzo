@@ -12,16 +12,20 @@ BUSCAR PROFESIONAL
 
     <form action="/AppBlog/searchprof/" method="GET"> {% csrf_token %}
 
-        <input type="text" name="professionalname" id="professionalname">
-
-        <input type="submit" value="BUSCAR">
+        <p style="color:white">
+            <em>COLOQUE PROFESION:</em>
+            <br/>
+            <br/>
+            <input type="text" name="professionalprofesion" id="professionalprofesion">
+            <br/>
+            <br/>
+            <button class="btn btn-primary" type="submit" style="font-size:medium">BUSCAR</button>
+        </p>
 
     </form>
 
 {% endblock %}
 
 {% block descripcion1 %}
-
-(Puede colocar nombre y/o apellido)
 
 {% endblock %}
