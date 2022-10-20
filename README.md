@@ -93,4 +93,4 @@ E-mail: rodrigo.alonzo@hotmail.com
 
 Video explicativo de la página web:
 
-<<<<<<** VERSIÓN ACTUAL 4.1 **>>>>>>
+<<<<<<** VERSIÓN ACTUAL 4.2 **>>>>>>
