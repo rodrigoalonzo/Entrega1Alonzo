@@ -91,6 +91,6 @@ http://127.0.0.1:8000/AppBlog/infoactual/infodetails/<int:pk> ---> Detalles de l
 
 E-mail: rodrigo.alonzo@hotmail.com
 
-Video explicativo de la página web:
+Video explicativo de la página web: https://drive.google.com/drive/folders/1MEvvAA3Tczl--49P58CweK-KxO8A6ead?usp=sharing
 
 <<<<<<** VERSIÓN ACTUAL 4.2 **>>>>>>
